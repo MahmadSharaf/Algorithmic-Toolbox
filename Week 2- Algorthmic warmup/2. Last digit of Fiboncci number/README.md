@@ -1,4 +1,4 @@
-The aim is to find the last digit of a Fibonacci number.
+The aim of the program is to find the last digit of a Fibonacci number.
 
 
 The Naive Algorithm is to calculate the sum of all of Fibonacci numbers up to the desired one, then calclate the modulus of the total; and 
