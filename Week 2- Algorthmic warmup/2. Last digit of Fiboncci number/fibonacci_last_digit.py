@@ -23,14 +23,9 @@ def get_fibonacci_last_digit_fast(n):
     current  = 1
 
     for _ in range(n - 1):
-        previous, current = current, (previous + current)%10
+        previous, current = current, (previous + current) % 10
     return current
 
-def get_fibonacci_last_digit_repetitive(n):
-    ar=[]
-    for i in range(60):
-        ar.insert(i,get_fibonacci_last_digit_fast(i))
-    return ar[n%60]
 if __name__ == '__main__':
 
     # #Stress Test
