@@ -1,7 +1,8 @@
 # Uses python3
-#import numpy as np
+#import numpy as np #For random.randint
 
 def MaxPairwiseProductNaive(a):
+   " This naive algorithm tries every pair combination possible Which use O(2^n) "
     n= len(a)
     result = 0
 #    index1,index2=0,0
@@ -14,16 +15,20 @@ def MaxPairwiseProductNaive(a):
     return result
 
 def MaxPairwiseProductFast(a):
+    " This algorithm finds uses two scans one to find the largest, and then the second scan searches the largest of the remaining ones"
+    
     num1,num2,index=0,0,0
     n=len(a)
+    
     for i in range(n):
         if(a[i]>=num1):
             index=i
             num1=a[i]
+    
     for i in range(n):
         if(a[i]>=num2 and i!=index):
             num2=a[i]
-#    print ("Fast: num1:",num1,"num2:",num2)
+            
     return num1*num2
 
 # Stress Test
@@ -42,8 +47,9 @@ def MaxPairwiseProductFast(a):
 #    else: print("OK")
 
 # Main Program
-n = int(input())
-a = [int(x) for x in input().split()]
-assert(len(a) == n)
+if __name__ == '__main__':
+    n = int(input())
+    a = [int(x) for x in input().split()]
+    assert(len(a) == n)
 
-print(MaxPairwiseProductFast(a))
+    print(MaxPairwiseProductFast(a))
